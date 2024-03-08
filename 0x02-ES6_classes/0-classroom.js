@@ -1,6 +1,7 @@
 /**
  * Class Representing a classroom.
- * @class
+ * @class ClassRoom
+ * @author Mohammed Kaka
  */
 export default class ClassRoom {
     /**
