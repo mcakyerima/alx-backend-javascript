@@ -61,7 +61,7 @@ class HolbertonCourse {
      * Gets the array of students enrolled in the course.
      * @returns {string[]} An array of students enrolled in the course.
      */
-    get strudents() {
+    get students() {
         return this._students;
     }
 
