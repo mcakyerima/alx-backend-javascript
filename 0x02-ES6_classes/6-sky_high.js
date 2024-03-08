@@ -2,9 +2,9 @@ import Building from './5-building.js';
 
 /**
  * Represents a sky-high building.
- * @author Mohammed Kaka
  * @class SkyHighBuilding
  * @extends Building
+ * @author Mohammed Kaka
  */
 export default class SkyHighBuilding extends Building {
   /**
@@ -31,6 +31,6 @@ export default class SkyHighBuilding extends Building {
    * @returns {String} The evacuation warning message.
    */
   evacuationWarningMessage() {
-    return `Evacuate slowly the ${this._floors} floors.`;
+    return `Evacuate slowly the ${this._floors} floors`;
   }
 }
