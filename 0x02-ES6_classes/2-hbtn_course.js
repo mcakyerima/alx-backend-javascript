@@ -3,7 +3,7 @@
  * @class HolbertonCourse
  * @author Mohammed Kaka
  */
-class HolbertonCourse {
+export default class HolbertonCourse {
     /**
      * Creates a new HolbertonCourse instance.
      * @constructor
@@ -77,6 +77,3 @@ class HolbertonCourse {
         }
     }
 }
-
-// Export the HolbertonCourse class
-export default HolbertonCourse;
