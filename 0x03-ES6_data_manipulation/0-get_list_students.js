@@ -1,5 +1,8 @@
+// 0-get_list_students.js
 /**
- * @return {Array{}} - Returns an array of objects
+ * Returns a list of students.
+ * @returns {{id: Number, firstName: String, location: String}[]}
+ * @author Mohammed Kaka
  */
 
 export default function getListStudents() {
