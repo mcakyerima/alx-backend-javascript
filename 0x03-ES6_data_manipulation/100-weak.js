@@ -1,25 +1,25 @@
-// Creating a WeakMap instance to track the number of times queryAPI is called for each endpoint
-export const weakMap = new WeakMap();
-
 /**
  * Query the API and track the number of times it's called for each endpoint.
  * @param {Object} endpoint - The endpoint object containing protocol and name.
  * @throws {Error} - Throws an error if the number of queries for an endpoint is >= 5.
  * @author Mohammed kaka.
  */
-export default function queryAPI(endpoint) {
-    // Check if the endpoint is already tracked in the weakMap
-    if (weakMap.has(endpoint)) {
-        // If tracked, increment the count
-        const count = weakMap.get(endpoint) + 1;
-        weakMap.set(endpoint, count);
+/**
+ * A weak map of endpoints and the number of calls made.
+ */
+export const weakMap = new WeakMap();
 
-        // Throw an error if the count is >= 5
-        if (count >= 5) {
-            throw new Error('Endpoint load is high');
-        }
-    } else {
-        // If not tracked, set the count to 1
-        weakMap.set(endpoint, 1);
-    }
+/**
+ * The maximum number of calls for an endpoint.
+ */
+const MAX_ENDPOINT_CALLS = 5;
+
+export function queryAPI(endpoint) {
+  if (!weakMap.has(endpoint)) {
+    weakMap.set(endpoint, 0);
+  }
+  weakMap.set(endpoint, weakMap.get(endpoint) + 1);
+  if (weakMap.get(endpoint) >= MAX_ENDPOINT_CALLS) {
+    throw new Error('Endpoint load is high');
+  }
 }
