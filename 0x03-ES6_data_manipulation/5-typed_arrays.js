@@ -4,6 +4,7 @@
  * @param {number} position - The position to set the Int8 value.
  * @param {number} value - The Int8 value to set.
  * @returns {DataView} - The DataView representing the modified ArrayBuffer.
+ * @author Mohammed Kaka.
  */
 export default function createInt8TypedArray(length, position, value) {
     // Create a new ArrayBuffer with the specified length
